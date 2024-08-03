@@ -1,0 +1,11 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.v-btn {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.v-btn:hover {
+  opacity: 0.8;
+}

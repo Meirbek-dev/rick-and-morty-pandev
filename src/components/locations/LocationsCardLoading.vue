@@ -1,41 +1,42 @@
 <template>
-  <q-card class="location-card q-mt-xl">
-    <q-avatar class="location-card-icon">
-      <q-skeleton
-        type="QAvatar"
+  <v-card class="location-card mt-16">
+    <v-avatar class="location-card-icon">
+      <v-skeleton-loader
+        type="avatar"
       />
-    </q-avatar>
+    </v-avatar>
 
-    <q-card-section class="column items-center content-center q-pb-none">
-      <q-skeleton
-        height="30px"
+    <v-card-text class="d-flex flex-column align-center justify-center pb-0">
+      <v-skeleton-loader
+        height="30"
         type="text"
         width="100%"
       />
 
-      <q-skeleton
-        height="30px"
+      <v-skeleton-loader
+        class="mt-2"
+        height="30"
         type="text"
         width="100%"
       />
-    </q-card-section>
+    </v-card-text>
 
-    <q-card-section class="column flex-center items-center q-pt-none">
+    <v-card-text class="d-flex flex-column align-center justify-center pt-0">
       <div>
-        <q-skeleton
-          height="22px"
-          type="QChip"
-          width="90px"
+        <v-skeleton-loader
+          height="22"
+          type="chip"
+          width="90"
         />
       </div>
-      <div class="q-mt-sm">
-        <q-skeleton
-          size="40px"
-          type="QAvatar"
+      <div class="mt-2">
+        <v-skeleton-loader
+          size="40"
+          type="avatar"
         />
       </div>
-    </q-card-section>
-  </q-card>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script lang="ts" setup>

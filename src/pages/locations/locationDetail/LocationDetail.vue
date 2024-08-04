@@ -1,78 +1,78 @@
 <template>
-  <dialog-detail-content>
-    <section class="location-detail full-height full-height">
+  <v-dialog-content>
+    <v-container class="location-detail fill-height">
       <location-detail-loading v-if="isLoading" />
 
       <empty-result v-else-if="!isLoading && !location.id" />
 
-      <section v-else class="column items-center">
+      <v-container v-else class="d-flex flex-column align-center">
         <div class="episode-detail-icon">
-          <q-avatar class="location-card-icon" size="80px">
-            <img alt="location-img" src="../../assets/icons/planet-earth.webp">
-          </q-avatar>
+          <v-avatar size="80">
+            <v-img alt="location-img" src="../../assets/icons/planet-earth.webp" />
+          </v-avatar>
         </div>
 
-        <div class="episode-detail-name q-mt-lg">
-          <div class="flex justify-center items-center">
-            <p class="q-mb-none q-mr-md text-center text-h4">
-              {{ location.name }}
-            </p>
-          </div>
+        <v-container class="episode-detail-name mt-6">
+          <v-row align="center" justify="center">
+            <v-col cols="auto">
+              <p class="mb-0 mr-4 text-center text-h4">
+                {{ location.name }}
+              </p>
+            </v-col>
+          </v-row>
 
-          <div class="flex items-center justify-center no-wrap q-mb-sm">
-            <q-icon name="mdi-calendar-range" size="20px" />
-
-            <p class="q-mb-none q-ml-sm text-h6">
-              <span class="text-bold">created at: </span>
+          <v-row align="center" class="mb-2" justify="center" no-wrap>
+            <v-icon size="20">mdi-calendar-range</v-icon>
+            <p class="mb-0 ml-2 text-h6">
+              <span class="font-weight-bold">created at: </span>
               <span>{{ $filters.formatDate(String(location.created)) }}</span>
             </p>
-          </div>
-        </div>
+          </v-row>
+        </v-container>
 
-        <div class="episode-detail-info">
-          <div class="flex gap-20 justify-center">
-            <div class="flex items-center no-wrap">
-              <q-icon size="40px">
-                <img alt="location-img" src="../../assets/icons/planet.webp">
-              </q-icon>
-
-              <p class="q-mb-none q-ml-sm text-h5">
+        <v-container class="episode-detail-info">
+          <v-row class="gap-5" justify="center">
+            <v-col class="d-flex align-center" cols="auto">
+              <v-icon size="40">
+                <v-img alt="location-img" src="../../assets/icons/planet.webp" />
+              </v-icon>
+              <p class="mb-0 ml-2 text-h5">
                 {{ location.type }}
               </p>
-            </div>
+            </v-col>
 
-            <div class="flex items-center no-wrap">
-              <q-icon size="45px">
-                <img alt="location-img" src="../../assets/icons/galaxy.webp">
-              </q-icon>
-              <p class="q-mb-none q-ml-sm text-h5">
+            <v-col class="d-flex align-center" cols="auto">
+              <v-icon size="45">
+                <v-img alt="location-img" src="../../assets/icons/galaxy.webp" />
+              </v-icon>
+              <p class="mb-0 ml-2 text-h5">
                 {{ location.dimension || 'unknown' }}
               </p>
-            </div>
-          </div>
+            </v-col>
+          </v-row>
 
-          <div class="flex items-center no-wrap justify-center q-mt-md">
-            <q-icon name="mdi-account-multiple" size="30px" />
-            <p class="q-mb-none q-ml-md text-h5 text-center">
+          <v-row align="center" class="mt-4" justify="center" no-wrap>
+            <v-icon size="30">mdi-account-multiple</v-icon>
+            <p class="mb-0 ml-4 text-h5 text-center">
               {{ `${location.residents.length} ` }}
-              <a
-                class="text-primary cursor-pointer"
-                @click="showDetailDialog"
+
+              class="text-primary cursor-pointer"
+              @click="showDetailDialog"
               >
-                characters
+              characters
               </a>
               <span>in this location</span>
             </p>
-          </div>
-        </div>
+          </v-row>
+        </v-container>
 
         <episodes-and-characters-dialog
           :array-items="location.locationResidents"
           component="CharacterCard"
         />
-      </section>
-    </section>
-  </dialog-detail-content>
+      </v-container>
+    </v-container>
+  </v-dialog-content>
 </template>
 
 <script lang="ts" setup>
@@ -122,5 +122,5 @@
 </script>
 
 <style scoped>
-
+@import '@/styles/app.scss'
 </style>

@@ -1,33 +1,28 @@
 <template>
-  <q-card class="episode-card">
-    <q-card-section class="q-pb-none">
-      <div class="flex no-wrap content-center items-center">
-        <q-icon color="negative" name="mdi-television-play" size="24px" />
-
-        <q-skeleton
-          class="q-ml-sm"
-          height="30px"
+  <v-card class="episode-card">
+    <v-card-text class="pb-0">
+      <v-row align="center" no-gutters>
+        <v-icon color="error" size="24">mdi-television-play</v-icon>
+        <v-skeleton-loader
+          class="ml-2"
+          height="30"
           type="text"
-          width="150px"
+          width="150"
         />
-      </div>
-    </q-card-section>
-    <q-card-section class="q-pb-none q-pb-none flex justify-between items-center no-wrap q-pb-sm">
-      <div>
-        <q-skeleton
-          height="20px"
-          type="QChip"
-          width="80px"
-        />
-      </div>
-      <div>
-        <q-skeleton
-          size="30px"
-          type="QAvatar"
-        />
-      </div>
-    </q-card-section>
-  </q-card>
+      </v-row>
+    </v-card-text>
+    <v-card-text class="pb-0 d-flex justify-space-between align-center">
+      <v-skeleton-loader
+        height="20"
+        type="chip"
+        width="80"
+      />
+      <v-skeleton-loader
+        size="30"
+        type="avatar"
+      />
+    </v-card-text>
+  </v-card>
 </template>
 
 <script lang="ts" setup>

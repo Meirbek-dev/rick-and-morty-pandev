@@ -1,88 +1,81 @@
 <template>
-  <section class="location-detail full-height full-height column items-center">
+  <v-container class="location-detail d-flex flex-column align-center fill-height">
     <div class="episode-detail-icon">
-      <q-skeleton
+      <v-skeleton-loader
         class="location-card-icon"
-        size="80px"
-        type="QAvatar"
+        size="80"
+        type="avatar"
       />
     </div>
 
-    <div class="episode-detail-name q-mt-lg">
-      <div class="flex justify-center items-center">
-        <q-skeleton
-          height="40px"
+    <div class="episode-detail-name mt-6">
+      <v-row align="center" justify="center" no-gutters>
+        <v-skeleton-loader
+          height="40"
           type="text"
-          width="200px"
+          width="200"
         />
+        <v-skeleton-loader
+          class="ml-4"
+          size="45"
+          type="avatar"
+        />
+      </v-row>
 
-        <div>
-          <q-skeleton
-            class="q-ml-md"
-            size="45px"
-            type="QAvatar"
-          />
-        </div>
-      </div>
-
-      <div class="flex items-center justify-center no-wrap q-mb-sm q-mt-sm">
-        <q-icon name="mdi-calendar-range" size="20px" />
-
-        <q-skeleton
-          class="q-ml-md"
-          height="40px"
+      <v-row align="center" class="my-2" justify="center" no-wrap>
+        <v-icon size="20">mdi-calendar-range</v-icon>
+        <v-skeleton-loader
+          class="ml-4"
+          height="40"
           type="text"
-          width="250px"
+          width="250"
         />
-      </div>
+      </v-row>
     </div>
 
-    <div class="episode-detail-info q-mt-sm">
-      <div class="flex gap-20 justify-center">
-        <div class="flex items-center no-wrap">
-          <q-icon size="40px">
-            <img alt="location-img" src="../../../assets/icons/planet.webp">
-          </q-icon>
-
-          <q-skeleton
-            class="q-ml-md"
-            height="40px"
+    <div class="episode-detail-info mt-2">
+      <v-row class="gap-5" justify="center">
+        <v-col class="d-flex align-center" cols="auto">
+          <v-icon size="40">
+            <v-img alt="location-img" src="../../../assets/icons/planet.webp" />
+          </v-icon>
+          <v-skeleton-loader
+            class="ml-4"
+            height="40"
             type="text"
-            width="120px"
+            width="120"
           />
-        </div>
+        </v-col>
 
-        <div class="flex items-center no-wrap">
-          <q-icon size="50px">
-            <img alt="location-img" src="../../../assets/icons/galaxy.webp">
-          </q-icon>
-
-          <q-skeleton
-            class="q-ml-md"
-            height="40px"
+        <v-col class="d-flex align-center" cols="auto">
+          <v-icon size="50">
+            <v-img alt="location-img" src="../../../assets/icons/galaxy.webp" />
+          </v-icon>
+          <v-skeleton-loader
+            class="ml-4"
+            height="40"
             type="text"
-            width="120px"
+            width="120"
           />
-        </div>
-      </div>
+        </v-col>
+      </v-row>
 
-      <div class="flex items-center no-wrap justify-center q-mt-md">
-        <q-icon name="mdi-account-multiple" size="30px" />
-
-        <q-skeleton
-          class="q-ml-md"
-          height="40px"
+      <v-row align="center" class="mt-4" justify="center" no-wrap>
+        <v-icon size="30">mdi-account-multiple</v-icon>
+        <v-skeleton-loader
+          class="ml-4"
+          height="40"
           type="text"
-          width="220px"
+          width="220"
         />
-      </div>
+      </v-row>
     </div>
-  </section>
+  </v-container>
 </template>
 
 <script lang="ts" setup>
 </script>
 
 <style scoped>
-
+@import '@/styles/app.scss'
 </style>

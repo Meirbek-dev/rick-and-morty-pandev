@@ -1,41 +1,40 @@
 <template>
-  <q-page class="q-mb-md flex content-center column">
-    <section class="q-mt-lg full-width">
-      <div
-        v-if="!isLoading && !locations.length"
-        class="col-12"
-      >
+  <v-container class="mb-4 d-flex flex-column justify-center">
+    <v-row class="mt-6">
+      <v-col v-if="!isLoading && !locations.length" cols="12">
         <empty-result />
-      </div>
+      </v-col>
 
-      <pagination-content
-        v-else
-        :max-pages="4"
-        :page="currentPage"
-        :pages="responseInfo.pages || 1"
-        @change:page="changePage"
-      >
-        <section class="row flex-center">
-          <list-locations-loading
-            v-if="isLoading"
-          />
+      <v-col v-else cols="12">
+        <pagination-content
+          :max-pages="4"
+          :page="currentPage"
+          :pages="responseInfo.pages || 1"
+          @change:page="changePage"
+        >
+          <v-row justify="center">
+            <list-locations-loading v-if="isLoading" />
 
-          <div
-            v-for="location in locations"
-            v-else
-            :key="location.id"
-            class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg-2 flex flex-center"
-          >
-            <locations-card
-              :location="location"
-            />
-          </div>
-        </section>
-      </pagination-content>
-    </section>
+            <v-col
+              v-for="location in locations"
+              v-else
+              :key="location.id"
+              class="d-flex justify-center"
+              cols="12"
+              lg="2"
+              md="3"
+              sm="4"
+              xs="6"
+            >
+              <locations-card :location="location" />
+            </v-col>
+          </v-row>
+        </pagination-content>
+      </v-col>
+    </v-row>
 
     <location-detail />
-  </q-page>
+  </v-container>
 </template>
 
 <script lang="ts" setup>
@@ -96,5 +95,4 @@
 </script>
 
 <style scoped>
-
 </style>

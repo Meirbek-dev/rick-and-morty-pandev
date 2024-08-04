@@ -1,34 +1,32 @@
 <template>
-  <q-card class="location-card q-mt-xl">
-    <q-avatar class="location-card-icon">
-      <img alt="location-img" :src="icon">
-    </q-avatar>
+  <v-card class="location-card mt-16">
+    <v-avatar class="location-card-icon">
+      <v-img :alt="location.name || 'location-img'" :src="icon" />
+    </v-avatar>
 
-    <q-card-section class="column items-center content-center q-pb-none">
-      <p class="q-ma-none text-truncate text-center">
+    <v-card-text class="d-flex flex-column align-center justify-center pb-0">
+      <p class="ma-0 text-truncate text-center">
         {{ location.name || '' }}
       </p>
-
       <p class="text-truncate text-center">
         {{ location.type || location.name || '' }}
       </p>
-    </q-card-section>
+    </v-card-text>
 
-    <q-card-section class="column flex-center items-center q-pt-none">
-      <div>
-        <q-btn
-          color="primary"
-          :disable="location.id === 0"
-          icon="mdi-information"
-          label="see more"
-          outline
-          rounded
-          size="9px"
-          @click="seeMore"
-        />
-      </div>
-    </q-card-section>
-  </q-card>
+    <v-card-text class="d-flex flex-column align-center justify-center pt-0">
+      <v-btn
+        color="primary"
+        :disabled="location.id === 0"
+        prepend-icon="mdi-information"
+        rounded
+        size="small"
+        variant="outlined"
+        @click="seeMore"
+      >
+        see more
+      </v-btn>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script lang="ts" setup>
@@ -39,11 +37,12 @@
 
   const router = useRouter()
   const currentRoute = router.currentRoute
+
   const props = withDefaults(defineProps<{
     location: ILocation;
     icon?: string;
   }>(), {
-    // icon: iconPlanet,
+  // icon: iconPlanet,
   })
 
   const getLocation = computed<ILocation>(() => (props.location))
@@ -66,7 +65,6 @@
       },
     })
   }
-
 </script>
 
 <style scoped lang="scss">

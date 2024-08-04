@@ -1,0 +1,19 @@
+.character-detail {
+  &-info {
+    &-locations {
+      justify-content: end;
+    }
+  }
+}
+
+.character-name {
+  justify-content: space-between;
+}
+
+.justify-text {
+  justify-content: space-between;
+}
+
+.hide-in-mobile {
+  display: none;
+}

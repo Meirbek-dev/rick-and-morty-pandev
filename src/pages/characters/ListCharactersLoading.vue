@@ -9,8 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-  import CharacterCardLoading from './CharacterCardLoading.vue'
-
+  import CharacterCardLoading from '@/components/characters/CharacterCardLoading.vue'
   withDefaults(defineProps<{
     items: number
   }>(), {

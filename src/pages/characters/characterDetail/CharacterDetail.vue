@@ -54,30 +54,30 @@
           </div>
         </div>
 
-        <episodes-and-characters-dialog
+        <!-- <episodes-and-characters-dialog
           :array-items="character?.episodes"
           component="EpisodeCard"
-        />
+        /> -->
       </section>
     </section>
   </dialog-detail-content>
 </template>
 
 <script lang="ts" setup>
-  import CharacterDetailLoading from 'pages/characterDetail/components/CharacterDetailLoading.vue'
-  import CharacterLocations from 'pages/characterDetail/components/CharacterLocations.vue'
-  import CharacterInfo from 'pages/characterDetail/components/CharacterInfo.vue'
-  import EpisodesAndCharactersDialog from 'components/EpisodesAndCharactersDialog.vue'
+  import CharacterDetailLoading from './CharacterDetailLoading.vue'
+  import CharacterLocations from './CharacterLocations.vue'
+  import CharacterInfo from './CharacterInfo.vue'
+  // import EpisodesAndCharactersDialog from 'components/EpisodesAndCharactersDialog.vue'
   import { ICharacter } from '@/types/character'
   import { useCharacterStore } from '@/stores/charactersStore'
   import { computed, inject, onMounted, watch } from 'vue'
-  import EmptyResult from '../common/EmptyResult.vue'
+  import EmptyResult from '@/components/common/EmptyResult.vue'
   import { useRouter } from 'vue-router'
-  import { IEventBus } from 'boot/bus'
-  import { EventBus } from 'quasar'
-  import DialogDetailContent from 'components/DialogDetailContent.vue'
+  // import { IEventBus } from 'boot/bus'
+  // import { EventBus } from 'quasar'
+  // import DialogDetailContent from 'components/DialogDetailContent.vue'
 
-  const bus = inject<EventBus<IEventBus>>('bus')
+  // const bus = inject<EventBus<IEventBus>>('bus')
   const router = useRouter()
   const characterStore = useCharacterStore()
 
@@ -102,11 +102,11 @@
     }
   })
 
-  const showDetailDialog = (): void => {
-    if (character.value.episodes && character.value.episodes?.length > 0) {
-      bus?.emit('show-dialog', true)
-    }
-  }
+  // const showDetailDialog = (): void => {
+  //   if (character.value.episodes && character.value.episodes?.length > 0) {
+  //     bus?.emit('show-dialog', true)
+  //   }
+  // }
 
   onMounted(async (): Promise<void> => {
     if (characterId) {
@@ -116,5 +116,5 @@
 </script>
 
 <style scoped lang="scss">
-@import "./style/characterDetail.scss";
+@import '../style/CharacterDetail.scss'
 </style>

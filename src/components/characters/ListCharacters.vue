@@ -34,8 +34,8 @@
 </template>
 
 <script setup lang="ts">
-  // import ListCharactersLoading from 'pages/characters/components/ListCharactersLoading.vue'
-  // import CharacterCard from 'components/characterCard/CharacterCard.vue'
+  import ListCharactersLoading from './ListCharactersLoading.vue'
+  import CharacterCard from './CharacterCard.vue'
   import { ICharacter } from '@/types/character'
 
   withDefaults(defineProps<{

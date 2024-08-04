@@ -1,9 +1,9 @@
-interface ILocationInfo {
+type ILocationInfo = {
   name: string;
   url: string;
 }
 
-export interface ICharacter {
+export type ICharacter = {
   id: number;
   name: string;
   status: string;

@@ -1,4 +1,4 @@
-export interface ILocation {
+export type ILocation = {
   id: number;
   name: string;
   type: string;

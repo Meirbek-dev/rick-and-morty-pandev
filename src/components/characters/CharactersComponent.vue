@@ -40,7 +40,7 @@
 </template>
 
 <script lang="ts" setup>
-  import ListCharactersLoading from './ListCharactersLoading.vue'
+  import ListCharactersLoading from '@/pages/characters/ListCharactersLoading.vue'
   import CharacterCard from './CharacterCard.vue'
   import PaginationContent from '../common/PaginationContent.vue'
   import { ICharacter } from '@/types/character'
@@ -48,7 +48,7 @@
   import EmptyResult from '../common/EmptyResult.vue'
   import { computed, onMounted, ref } from 'vue'
   import { useRouter } from 'vue-router'
-  import CharacterDetail from 'pages/characterDetail/CharacterDetail.vue'
+  import CharacterDetail from './characterDetail/CharacterDetail.vue'
 
   const router = useRouter()
   const characterStore = useCharacterStore()
@@ -71,7 +71,7 @@
       },
     })
 
-    characterStore.fetchSingleCharacters({
+    characterStore.fetchCharacters({
       page: currentPage.value,
     })
   }
@@ -85,7 +85,7 @@
       })
     }
 
-    characterStore.fetchSingleCharacters({ page: parseInt(page) })
+    characterStore.fetchCharacters({ page: parseInt(page) })
   })
 </script>
 

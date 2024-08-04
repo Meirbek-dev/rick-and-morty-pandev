@@ -98,5 +98,5 @@
 </script>
 
 <style scoped lang="scss">
-@import "../style/characterCard.scss";
+@import "./style/CharacterCard.scss";
 </style>

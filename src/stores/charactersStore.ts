@@ -4,6 +4,7 @@ import { ICharacter } from '@/types/character'
 import { IAPIResponse, IAPIResponseInfo } from '@/types/apiResponse'
 import apiClient from '@/utils/requestsUtils'
 import { useEpisodeStore } from './episodesStore'
+import { useLocationStore } from './locationsStore'
 
 export const useCharacterStore = defineStore('character', {
   state: () => ({

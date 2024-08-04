@@ -1,71 +1,72 @@
 <template>
-  <div class="episode-detail-content column justify-end content-center items-center">
+  <v-container class="episode-detail-content d-flex flex-column justify-end align-center">
     <div class="episode-detail-content-icon">
-      <q-skeleton
-        size="70px"
-        type="QAvatar"
+      <v-skeleton-loader
+        size="70"
+        type="avatar"
       />
     </div>
 
-    <div class="episode-detail-content-name flex items-center justify-center gap-10 q-mt-md">
-      <div>
-        <q-skeleton
-          height="50px"
+    <v-row align="center" class="episode-detail-content-name mt-4" justify="center" no-gutters>
+      <v-col class="mr-2" cols="auto">
+        <v-skeleton-loader
+          height="50"
           type="text"
-          width="300px"
+          width="300"
         />
-      </div>
+      </v-col>
 
-      <div>
-        <q-skeleton
-          size="45px"
-          type="QAvatar"
+      <v-col cols="auto">
+        <v-skeleton-loader
+          size="45"
+          type="avatar"
         />
-      </div>
-    </div>
+      </v-col>
+    </v-row>
 
     <div class="episode-detail-content-info">
-      <div class="flex gap-20 justify-center">
-        <div class="flex items-center no-wrap">
-          <q-icon name="mdi-calendar-range" size="30px" />
-
-          <q-skeleton
-            class="q-ml-md"
-            height="40px"
+      <v-row class="gap-5" justify="center" no-gutters>
+        <v-col class="d-flex align-center" cols="auto">
+          <v-icon size="30">mdi-calendar-range</v-icon>
+          <v-skeleton-loader
+            class="ml-4"
+            height="40"
             type="text"
-            width="100px"
+            width="100"
           />
-        </div>
+        </v-col>
 
-        <div class="flex items-center no-wrap">
-          <q-icon name="mdi-playlist-play" size="30px" />
-
-          <q-skeleton
-            class="q-ml-md"
-            height="40px"
+        <v-col class="d-flex align-center" cols="auto">
+          <v-icon size="30">mdi-playlist-play</v-icon>
+          <v-skeleton-loader
+            class="ml-4"
+            height="40"
             type="text"
-            width="100px"
+            width="100"
           />
-        </div>
-      </div>
+        </v-col>
+      </v-row>
 
-      <div class="flex items-center no-wrap q-mt-lg justify-center">
-        <q-icon name="mdi-account-multiple" size="30px" />
-
-        <q-skeleton
-          class="q-ml-md"
-          height="40px"
-          type="text"
-          width="300px"
-        />
-      </div>
+      <v-row align="center" class="mt-6" justify="center" no-gutters>
+        <v-col class="d-flex align-center" cols="auto">
+          <v-icon size="30">mdi-account-multiple</v-icon>
+          <v-skeleton-loader
+            class="ml-4"
+            height="40"
+            type="text"
+            width="300"
+          />
+        </v-col>
+      </v-row>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts" setup>
 </script>
 
 <style scoped>
-
+.gap-5 {
+  gap: 20px;
+}
 </style>

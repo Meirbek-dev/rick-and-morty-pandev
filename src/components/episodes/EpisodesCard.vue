@@ -1,27 +1,26 @@
 <template>
-  <q-card class="episode-card">
-    <q-card-section class="q-pb-none">
-      <div class="flex no-wrap content-center items-center">
-        <q-icon color="negative" name="mdi-television-play" size="24px" />
-        <p class="q-ma-none q-ml-sm text-truncate">
+  <v-card class="episode-card">
+    <v-card-text class="pa-2">
+      <div class="d-flex align-center">
+        <v-icon color="error" size="24">mdi-television-play</v-icon>
+        <p class="ma-0 ml-2 text-truncate">
           {{ getEpisode.name }} | {{ getEpisode.episode }}
         </p>
       </div>
-    </q-card-section>
-    <q-card-section class="q-pb-none q-pb-none flex justify-between no-wrap">
-      <div>
-        <q-btn
-          color="primary"
-          icon="mdi-information"
-          label="see more"
-          outline
-          rounded
-          size="9px"
-          @click="seeMore"
-        />
-      </div>
-    </q-card-section>
-  </q-card>
+    </v-card-text>
+    <v-card-text class="pa-2 d-flex justify-space-between">
+      <v-btn
+        color="primary"
+        prepend-icon="mdi-information"
+        rounded
+        size="small"
+        variant="outlined"
+        @click="seeMore"
+      >
+        see more
+      </v-btn>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script lang="ts" setup>
@@ -35,7 +34,7 @@
     episode: IEpisode
   }>()
 
-  const getEpisode = computed<IEpisode>(() => (props.episode))
+  const getEpisode = computed<IEpisode>(() => props.episode)
 
   const seeMore = (): void => {
     const routeQuery = (

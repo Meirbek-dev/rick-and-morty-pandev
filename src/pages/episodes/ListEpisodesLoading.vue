@@ -1,11 +1,19 @@
 <template>
-  <div
-    v-for="episode in 20"
-    :key="episode.id"
-    class="col-12 col-sm-6 col-md-4 col-lg-3 flex flex-center q-pa-sm"
-  >
-    <episodes-card-loading />
-  </div>
+  <v-container>
+    <v-row>
+      <v-col
+        v-for="n in 20"
+        :key="n"
+        class="d-flex justify-center align-center pa-2"
+        cols="12"
+        lg="3"
+        md="4"
+        sm="6"
+      >
+        <episodes-card-loading />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script lang="ts" setup>
@@ -13,5 +21,4 @@
 </script>
 
 <style scoped>
-
 </style>
